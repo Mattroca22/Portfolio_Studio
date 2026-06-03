@@ -7,8 +7,13 @@ const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 const jetbrains = JetBrains_Mono({ subsets: ["latin"], variable: "--font-mono" });
 
 export const metadata: Metadata = {
-  title: "DataCraft | Data Engineer & Data Scientist",
-  description: "I transform data into strategic decisions. Specialist in Data Engineering, Analytics and Machine Learning.",
+  title: "DataCraft | Consultor Digital & Soluciones con IA",
+  description: "Convierto tu caos digital en un negocio que crece solo. Especialista en desarrollo web, datos e inteligencia artificial.",
+  icons: {
+    icon: "/images/Logo_negroFND.png",
+    shortcut: "/images/Logo_negroFND.png",
+    apple: "/images/Logo_negroFND.png",
+  },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

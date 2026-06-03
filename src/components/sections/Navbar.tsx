@@ -35,8 +35,13 @@ export function Navbar() {
       transition={{ duration: 0.6 }}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 py-3 md:py-4 flex items-center justify-between">
+        {/* LOGO AQUÍ - Reemplaza el círculo cyan por tu imagen */}
         <a href="#" className="flex items-center gap-2">
-          <div className="w-4 h-4 md:w-5 md:h-5 rounded-full bg-[#00d4ff]" />
+          <img 
+            src="/images/Logo_negroFND.png" 
+            alt="DataCraft" 
+            className="w-8 h-8 md:w-10 md:h-10 object-contain"
+          />
           <span className="text-base md:text-lg font-bold text-white">DataCraft</span>
         </a>
 

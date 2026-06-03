@@ -17,7 +17,7 @@ export default function Home() {
       <Hero />
       <Stats />
       <Services />
-      <Results /> {/* ← NUEVO */}
+      <Results /> 
       <TechStack />
       <Projects />
       <Testimonials />

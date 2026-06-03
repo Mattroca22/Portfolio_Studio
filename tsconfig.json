@@ -14,7 +14,7 @@
     "module": "esnext",
     "esModuleInterop": true,
     // CORREGIDO: Cambiado de "node" a "bundler" para que Next.js lea bien Tailwind
-    "moduleResolution": "bundler", 
+    "moduleResolution": "bundler",
     // CORREGIDO: Permite importar extensiones como .ts/.tsx sin problemas en el entorno de compilación
     "allowImportingTsExtensions": true,
     "resolveJsonModule": true,
@@ -32,10 +32,11 @@
     ]
   },
   "include": [
-    "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx",
-    ".next/types/**/*.ts"
+    ".next/types/**/*.ts",
+    "next-env.d.ts",
+    "dist/types/**/*.ts"
   ],
   "exclude": [
     "node_modules"

@@ -13,9 +13,9 @@ export const translations = {
     hero: {
       badge: "Agenda abierta para Q3 2026",
       headline1: "Transformo datos",
-      headline2: "en decisiones estrategicas.",
-      subtitle: "Ingeniero de Datos | Data Analyst | Data Scientist",
-      description: "Construyo pipelines escalables, dashboards inteligentes y modelos de ML que convierten datos crudos en ventajas competitivas.",
+      headline2: "en decisiones estratégicas.",
+      subtitle: "Consultor Digital | Especialista en Datos | Soluciones con IA",
+      description: "Ayudo a empresas a digitalizar sus procesos, optimizar sus datos y automatizar con inteligencia artificial. Resultados medibles, escalables y sin complicaciones técnicas.",
       ctaProjects: "Ver Proyectos →",
       ctaCall: "Agendar Llamada",
     },
@@ -27,21 +27,21 @@ export const translations = {
     },
     services: {
       label: "Servicios Especializados",
-      title: "Soluciones de datos a la medida",
-      subtitle: "Desde la ingesta hasta la inteligencia artificial, cubro todo el ciclo de vida del dato.",
-      engineering: {
-        title: "DATA ENGINEERING",
-        items: ["Pipelines ETL/ELT", "Data Warehouses", "Cloud Infrastructure", "Real-time Streaming", "Data Governance"],
+      title: "Soluciones que impulsan tu negocio",
+      subtitle: "Desde el desarrollo web hasta la inteligencia artificial, te ayudo a digitalizar y escalar tu empresa.",
+      dev: {
+        title: "DESARROLLO Y CANALES DIGITALES",
+        items: ["Business Websites", "Ecommerce", "Full-stack Apps", "API Integrations", "Landing Pages"],
       },
-      analytics: {
-        title: "DATA ANALYTICS",
-        items: ["Dashboards Interactivos", "BI Reporting", "SQL Analysis Avanzado", "A/B Testing", "KPI Tracking"],
+      data: {
+        title: "SOLUCIONES DE DATOS Y NUBE",
+        items: ["Data Entry Automatizado", "Migraciones Cloud", "Virtual Assistance Avanzada", "Limpieza de Datos", "Dashboards Ejecutivos"],
       },
-      science: {
-        title: "DATA SCIENCE",
-        items: ["Machine Learning", "Predictive Models", "NLP & Computer Vision", "MLOps", "AutoML"],
+      ai: {
+        title: "IA Y AUTOMATIZACIÓN",
+        items: ["Machine Learning", "Chatbots Inteligentes", "Agentes de IA", "Automatización de Procesos", "Análisis Predictivo"],
       },
-      more: "Saber mas",
+      more: "Saber más",
     },
     techStack: {
       label: "Mi Arsenal Tecnico",
@@ -133,8 +133,8 @@ export const translations = {
       badge: "Open agenda for Q3 2026",
       headline1: "I transform data",
       headline2: "into strategic decisions.",
-      subtitle: "Data Engineer | Data Analyst | Data Scientist",
-      description: "I build scalable pipelines, intelligent dashboards and ML models that turn raw data into competitive advantages.",
+      subtitle: "Digital Consultant | Data Specialist | AI Solutions",
+      description: "I help businesses digitize their processes, optimize their data, and automate with artificial intelligence. Measurable, scalable results without technical complications.",
       ctaProjects: "View Projects →",
       ctaCall: "Schedule Call",
     },
@@ -146,19 +146,19 @@ export const translations = {
     },
     services: {
       label: "Specialized Services",
-      title: "Tailored data solutions",
-      subtitle: "From ingestion to artificial intelligence, I cover the entire data lifecycle.",
-      engineering: {
-        title: "DATA ENGINEERING",
-        items: ["ETL/ELT Pipelines", "Data Warehouses", "Cloud Infrastructure", "Real-time Streaming", "Data Governance"],
+      title: "Solutions that boost your business",
+      subtitle: "From web development to artificial intelligence, I help you digitize and scale your company.",
+      dev: {
+        title: "DEVELOPMENT & DIGITAL CHANNELS",
+        items: ["Business Websites", "Ecommerce", "Full-stack Apps", "API Integrations", "Landing Pages"],
       },
-      analytics: {
-        title: "DATA ANALYTICS",
-        items: ["Interactive Dashboards", "BI Reporting", "Advanced SQL Analysis", "A/B Testing", "KPI Tracking"],
+      data: {
+        title: "DATA & CLOUD SOLUTIONS",
+        items: ["Automated Data Entry", "Cloud Migrations", "Advanced Virtual Assistance", "Data Cleansing", "Executive Dashboards"],
       },
-      science: {
-        title: "DATA SCIENCE",
-        items: ["Machine Learning", "Predictive Models", "NLP & Computer Vision", "MLOps", "AutoML"],
+      ai: {
+        title: "AI & AUTOMATION",
+        items: ["Machine Learning", "Smart Chatbots", "AI Agents", "Process Automation", "Predictive Analytics"],
       },
       more: "Learn more",
     },

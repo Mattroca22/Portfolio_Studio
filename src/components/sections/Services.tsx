@@ -3,7 +3,7 @@
 import { motion } from "framer-motion";
 import { SectionLabel } from "@/components/ui/SectionLabel";
 import { Card } from "@/components/ui/Card";
-import { Database, BarChart3, Brain, ArrowRight } from "lucide-react";
+import { Globe, Cloud, Bot, ArrowRight } from "lucide-react";
 import { useLang } from "@/hooks/useLang";
 
 export function Services() {
@@ -11,19 +11,19 @@ export function Services() {
 
   const services = [
     {
-      icon: Database,
-      title: t.services.engineering.title,
-      items: t.services.engineering.items,
+      icon: Globe,
+      title: t.services.dev.title,
+      items: t.services.dev.items,
     },
     {
-      icon: BarChart3,
-      title: t.services.analytics.title,
-      items: t.services.analytics.items,
+      icon: Cloud,
+      title: t.services.data.title,
+      items: t.services.data.items,
     },
     {
-      icon: Brain,
-      title: t.services.science.title,
-      items: t.services.science.items,
+      icon: Bot,
+      title: t.services.ai.title,
+      items: t.services.ai.items,
     },
   ];
 

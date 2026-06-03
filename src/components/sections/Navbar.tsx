@@ -38,7 +38,7 @@ export function Navbar() {
         {/* LOGO AQUÍ - Reemplaza el círculo cyan por tu imagen */}
         <a href="#" className="flex items-center gap-2">
           <img 
-            src="/images/Logo_negroFND.png" 
+            src="public/images/Logo_negroFND.png" 
             alt="DataCraft" 
             className="w-8 h-8 md:w-10 md:h-10 object-contain"
           />

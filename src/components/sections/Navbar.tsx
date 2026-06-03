@@ -40,7 +40,7 @@ export function Navbar() {
         <a href="#" className="flex items-center gap-2">
         <div className="w-8 h-8 md:w-10 md:h-10 bg-white rounded-lg flex items-center justify-center p-1 overflow-hidden">
           <img 
-            src="/images/Logo_negroFND.png" 
+            src="/images/Logo Mattro22_Studio.png" 
             alt="DataCraft" 
             className="w-full h-full object-contain"
           />

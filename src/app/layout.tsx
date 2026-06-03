@@ -10,9 +10,9 @@ export const metadata: Metadata = {
   title: "DataCraft | Consultor Digital & Soluciones con IA",
   description: "Convierto tu caos digital en un negocio que crece solo. Especialista en desarrollo web, datos e inteligencia artificial.",
   icons: {
-    icon: "/images/Logo_negroFND.png",
-    shortcut: "/images/Logo_negroFND.png",
-    apple: "/images/Logo_negroFND.png",
+    icon: "/images/Logo Mattro22_Studio.png",
+    shortcut: "/images/Logo Mattro22_Studio.png",
+    apple: "/images/Logo Mattro22_Studio.png",
   },
 };
 

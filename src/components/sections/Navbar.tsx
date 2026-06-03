@@ -5,6 +5,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import { LanguageToggle } from "@/components/ui/LanguageToggle";
 import { useLang } from "@/hooks/useLang";
+import Image from "next/image";
 
 export function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -37,13 +38,15 @@ export function Navbar() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 py-3 md:py-4 flex items-center justify-between">
         {/* LOGO AQUÍ - Reemplaza el círculo cyan por tu imagen */}
         <a href="#" className="flex items-center gap-2">
+        <div className="w-8 h-8 md:w-10 md:h-10 bg-white rounded-lg flex items-center justify-center p-1 overflow-hidden">
           <img 
-            src="public/images/Logo_negroFND.png" 
+            src="/images/Logo_negroFND.png" 
             alt="DataCraft" 
-            className="w-8 h-8 md:w-10 md:h-10 object-contain"
+            className="w-full h-full object-contain"
           />
-          <span className="text-base md:text-lg font-bold text-white">DataCraft</span>
-        </a>
+        </div>
+        <span className="text-base md:text-lg font-bold text-white">DataCraft</span>
+      </a>
 
         <div className="hidden md:flex items-center gap-6 lg:gap-8">
           {navItems.map((item) => (

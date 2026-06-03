@@ -5,9 +5,9 @@ import { MessageCircle } from "lucide-react";
 import { useLang } from "@/hooks/useLang";
 
 export function WhatsAppButton() {
-  const { t } = useLang();
+  const { lang } = useLang(); // ← usa lang del contexto, no de t
   const phoneNumber = "34600000000"; // Reemplaza con tu número real
-  const message = t.lang === "ES" 
+  const message = lang === "ES" 
     ? "Hola! Me interesa tu servicio de Data Engineering. ¿Podemos hablar?"
     : "Hi! I'm interested in your Data Engineering service. Can we talk?";
   const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;

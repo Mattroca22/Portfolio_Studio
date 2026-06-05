@@ -8,21 +8,85 @@ const technologies = [
   { name: 'GCP', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/googlecloud/googlecloud-original.svg' },
   { name: 'Spark', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/apache/apache-original.svg' },
   { name: 'Kafka', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/apachekafka/apachekafka-original.svg' },
-  { name: 'dbt', icon: 'data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%23FF6B4A"><path d="M12 0L2.4 5.4v13.2L12 24l9.6-5.4V5.4L12 0zm7.2 17.4l-7.2 4.1-7.2-4.1V6.6l7.2-4.1 7.2 4.1v10.8z"/></svg>' },
+  { name: 'dbt', icon: 'https://unpkg.com/simple-icons@v9/icons/dbt.svg' },
   { name: 'Pandas', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pandas/pandas-original.svg' },
   { name: 'NumPy', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/numpy/numpy-original.svg' },
   { name: 'Scikit-learn', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/scikitlearn/scikitlearn-original.svg' },
   { name: 'TensorFlow', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tensorflow/tensorflow-original.svg' },
   { name: 'PyTorch', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pytorch/pytorch-original.svg' },
-  { name: 'Tableau', icon: 'data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%2311548F"><path d="M11.233 11.233H6.711v1.517h4.522v4.522h1.517v-4.522h4.522v-1.517h-4.522V6.711h-1.517z"/></svg>' },
-  { name: 'Power BI', icon: 'data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%23F2C811"><path d="M9.215 5.215h4.308v13.57H9.215zm6.462 4.308H20v9.262h-4.323zM2.754 11.677h4.308v7.108H2.754z"/></svg>' },
+  { name: 'Tableau', icon: 'https://unpkg.com/simple-icons@v9/icons/tableau.svg' },
+  { name: 'Power BI', icon: 'https://unpkg.com/simple-icons@v9/icons/powerbi.svg' },
   { name: 'Docker', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg' },
   { name: 'Git', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg' },
 ];
 
 export function TechStack() {
+  // Dividimos las tecnologías equitativamente para mantener las dos líneas independientes
+  const half = Math.ceil(technologies.length / 2);
+  const row1 = technologies.slice(0, half);
+  const row2 = technologies.slice(half);
+
+  // Duplicamos cada fila para que el bucle infinito no tenga cortes visuales
+  const duplicatedRow1 = [...row1, ...row1];
+  const duplicatedRow2 = [...row2, ...row2];
+
+  // Función helper para renderizar las tarjetas y evitar código repetido
+  const renderCard = (tech: typeof technologies[0], index: number) => {
+    const isTableau = tech.name === 'Tableau';
+    const isDbt = tech.name === 'dbt';
+    const isPowerBI = tech.name === 'Power BI';
+
+    // Evitamos conflictos con punteros para asegurar el efecto hover en toda la tarjeta
+    let iconClass = "w-6 h-6 object-contain pointer-events-none";
+    if (isDbt) iconClass += " icon-dbt";
+    if (isTableau) iconClass += " icon-tableau";
+    if (isPowerBI) iconClass += " icon-powerbi";
+
+    return (
+      <div
+        key={index}
+        className="group flex items-center gap-3 bg-[#161b22]/40 border border-gray-800 rounded-xl px-5 py-3 select-none backdrop-blur-sm hover:border-gray-600 hover:bg-[#1c212a] transition-all duration-200 cursor-pointer"
+      >
+        <img
+          src={tech.icon}
+          alt={`${tech.name} logo`}
+          className={iconClass}
+          loading="lazy"
+        />
+        <span className="text-sm font-medium text-gray-400 group-hover:text-white transition-colors duration-200 pointer-events-none">
+          {tech.name}
+        </span>
+      </div>
+    );
+  };
+
   return (
-    <section className="bg-[#0b0c10] text-white py-20 flex flex-col items-center justify-center">
+    <section className="bg-[#0b0c10] text-white py-20 overflow-hidden flex flex-col items-center justify-center">
+      <style>{`
+        /* Animación hacia la izquierda */
+        @keyframes marqueeLeft {
+          0% { transform: translateX(0); }
+          100% { transform: translateX(-50%); }
+        }
+        /* Animación hacia la derecha */
+        @keyframes marqueeRight {
+          0% { transform: translateX(-50%); }
+          100% { transform: translateX(0); }
+        }
+
+        .animate-marquee-left {
+          animation: marqueeLeft 40s linear infinite;
+        }
+        .animate-marquee-right {
+          animation: marqueeRight 40s linear infinite;
+        }
+
+        /* Filtros CSS para inyectar los colores corporativos a los vectores monocromáticos */
+        .icon-dbt { filter: invert(53%) sepia(68%) saturate(3019%) hue-rotate(344deg) brightness(101%) contrast(101%); }
+        .icon-tableau { filter: invert(48%) sepia(34%) saturate(934%) hue-rotate(134deg) brightness(91%) contrast(89%); }
+        .icon-powerbi { filter: invert(82%) sepia(62%) saturate(1750%) hue-rotate(1deg) brightness(103%) contrast(103%); }
+      `}</style>
+
       <div className="text-center mb-12 px-4">
         <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-3 text-gray-100">
           Tecnologías que domino
@@ -32,31 +96,19 @@ export function TechStack() {
         </p>
       </div>
 
-      {/* Contenedor Flex con envoltura para recrear la cuadrícula original alineada al centro */}
-      <div className="max-w-5xl mx-auto flex flex-wrap justify-center gap-4 px-6">
-        {technologies.map((tech, index) => {
-          // Resaltado amarillo específico para Power BI tal como en la captura
-          const isPowerBI = tech.name === 'Power BI';
-          
-          return (
-            <div
-              key={index}
-              className={`flex items-center gap-3 bg-[#161b22]/40 border rounded-xl px-5 py-3 select-none backdrop-blur-sm transition-all duration-300 hover:scale-105
-                ${isPowerBI 
-                  ? 'border-yellow-500/70 shadow-[0_0_15px_rgba(234,179,8,0.1)]' 
-                  : 'border-gray-800 hover:border-gray-700'
-                }`}
-            >
-              <img
-                src={tech.icon}
-                alt={`${tech.name} logo`}
-                className="w-6 h-6 object-contain"
-                loading="lazy"
-              />
-              <span className="text-sm font-medium text-gray-300">{tech.name}</span>
-            </div>
-          );
-        })}
+      {/* Contenedor de las líneas con máscara de desvanecimiento lateral */}
+      <div className="w-full relative max-w-7xl overflow-hidden [mask-image:linear-gradient(to_right,transparent,white_15%,white_85%,transparent)] flex flex-col gap-5 py-2">
+        
+        {/* LÍNEA 1: Va hacia la izquierda */}
+        <div className="flex w-max gap-4 py-1 animate-marquee-left">
+          {duplicatedRow1.map((tech, index) => renderCard(tech, index))}
+        </div>
+
+        {/* LÍNEA 2: Va hacia la derecha */}
+        <div className="flex w-max gap-4 py-1 animate-marquee-right">
+          {duplicatedRow2.map((tech, index) => renderCard(tech, index + 100))}
+        </div>
+
       </div>
     </section>
   );

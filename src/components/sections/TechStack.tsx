@@ -1,101 +1,62 @@
-"use client";
+import React from 'react';
 
-import { motion } from "framer-motion";
-import { SectionLabel } from "@/components/ui/SectionLabel";
-import { useLang } from "@/hooks/useLang";
-
-// Slugs corregidos exactamente según la base de datos de Simple Icons
-const techs = [
-  { name: "Python", slug: "python", color: "#3776AB" },
-  { name: "SQL", slug: "postgresql", color: "#4169E1" }, // Cambiado a postgresql que sí tiene un logo limpio de BD
-  { name: "AWS", slug: "amazonwebservices", color: "#FF9900" }, // Corregido el slug oficial
-  { name: "Azure", slug: "microsoftazure", color: "#0089D6" }, // Corregido el slug oficial
-  { name: "GCP", slug: "googlecloud", color: "#4285F4" }, // Corregido el slug oficial
-  { name: "Spark", slug: "apachespark", color: "#E25A1B" },
-  { name: "Kafka", slug: "apachekafka", color: "#231F20" },
-  { name: "dbt", slug: "dbt", color: "#FF694B" },
-  { name: "Pandas", slug: "pandas", color: "#150458" },
-  { name: "NumPy", slug: "numpy", color: "#013243" },
-  { name: "Scikit-learn", slug: "scikitlearn", color: "#F7931E" }, // Corregido el slug oficial
-  { name: "TensorFlow", slug: "tensorflow", color: "#FF6F00" },
-  { name: "PyTorch", slug: "pytorch", color: "#EE4C2C" },
-  { name: "Tableau", slug: "tableau", color: "#E97627" },
-  { name: "Power BI", slug: "powerbi", color: "#F2C811" },
-  { name: "Docker", slug: "docker", color: "#2496ED" },
-  { name: "Git", slug: "git", color: "#F05032" },
+const technologies = [
+  { name: 'Python', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg' },
+  { name: 'SQL', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg' }, 
+  { name: 'AWS', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original-wordmark.svg' },
+  { name: 'Azure', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/azure/azure-original.svg' },
+  { name: 'GCP', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/googlecloud/googlecloud-original.svg' },
+  { name: 'Spark', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/apache/apache-original.svg' },
+  { name: 'Kafka', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/apachekafka/apachekafka-original.svg' },
+  { name: 'dbt', icon: 'data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%23FF6B4A"><path d="M12 0L2.4 5.4v13.2L12 24l9.6-5.4V5.4L12 0zm7.2 17.4l-7.2 4.1-7.2-4.1V6.6l7.2-4.1 7.2 4.1v10.8z"/></svg>' },
+  { name: 'Pandas', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pandas/pandas-original.svg' },
+  { name: 'NumPy', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/numpy/numpy-original.svg' },
+  { name: 'Scikit-learn', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/scikitlearn/scikitlearn-original.svg' },
+  { name: 'TensorFlow', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tensorflow/tensorflow-original.svg' },
+  { name: 'PyTorch', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pytorch/pytorch-original.svg' },
+  { name: 'Tableau', icon: 'data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%2311548F"><path d="M11.233 11.233H6.711v1.517h4.522v4.522h1.517v-4.522h4.522v-1.517h-4.522V6.711h-1.517z"/></svg>' },
+  { name: 'Power BI', icon: 'data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%23F2C811"><path d="M9.215 5.215h4.308v13.57H9.215zm6.462 4.308H20v9.262h-4.323zM2.754 11.677h4.308v7.108H2.754z"/></svg>' },
+  { name: 'Docker', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg' },
+  { name: 'Git', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg' },
 ];
 
 export function TechStack() {
-  const { t } = useLang();
-
   return (
-    <section id="stack" className="py-20 max-w-7xl mx-auto px-4 sm:px-6 relative overflow-hidden">
-      <div className="flex flex-col items-center text-center mb-12">
-        <SectionLabel>{t.techStack.label || "Stack"}</SectionLabel>
-        
-        <motion.h2
-          className="text-3xl md:text-4xl font-bold text-white mb-4"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-        >
-          {t.techStack.title}
-        </motion.h2>
-        
-        <motion.p
-          className="text-[rgba(255,255,255,0.6)] mb-12 max-w-2xl"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ delay: 0.1 }}
-        >
-          {t.techStack.subtitle}
-        </motion.p>
+    <section className="bg-[#0b0c10] text-white py-20 flex flex-col items-center justify-center">
+      <div className="text-center mb-12 px-4">
+        <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-3 text-gray-100">
+          Tecnologías que domino
+        </h2>
+        <p className="text-gray-400 text-sm md:text-base max-w-2xl mx-auto">
+          Stack moderno y probado en producción para escalar cualquier proyecto de datos.
+        </p>
+      </div>
 
-        {/* Contenedor Grid optimizado */}
-        <div className="flex flex-wrap gap-4 justify-center max-w-4xl">
-          {techs.map((tech, i) => {
-            // Quitamos el "/ffffff" final para traer el SVG con el color real de la marca
-            const iconUrl = `https://cdn.simpleicons.org/${tech.slug}`;
-
-            return (
-              <motion.div
-                key={tech.name}
-                className="flex items-center gap-3 px-5 py-3 rounded-xl bg-[rgba(255,255,255,0.02)] border border-[rgba(255,255,255,0.06)] transition-all duration-300 cursor-default group relative overflow-hidden"
-                initial={{ opacity: 0, scale: 0.8 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.03 }}
-                whileHover={{ 
-                  scale: 1.05,
-                  borderColor: tech.color,
-                  boxShadow: `0px 0px 20px -5px ${tech.color}40`
-                }}
-              >
-                {/* Efecto Glow sutil en el fondo usando el color de la marca */}
-                <div 
-                  className="absolute inset-0 opacity-0 group-hover:opacity-5 transition-opacity duration-300 pointer-events-none"
-                  style={{ backgroundColor: tech.color }}
-                />
-
-                {/* Renderizado del Icono SVG a color */}
-                <img 
-                  src={iconUrl} 
-                  alt={`${tech.name} logo`}
-                  className="w-5 h-5 object-contain transition-transform duration-300 group-hover:scale-110"
-                  onError={(e) => {
-                    // Fallback por si acaso algún entorno bloquea el CDN de Simple Icons
-                    (e.target as HTMLImageElement).style.display = 'none';
-                  }}
-                />
-
-                <span className="text-sm font-medium text-white/80 group-hover:text-white transition-colors">
-                  {tech.name}
-                </span>
-              </motion.div>
-            );
-          })}
-        </div>
+      {/* Contenedor Flex con envoltura para recrear la cuadrícula original alineada al centro */}
+      <div className="max-w-5xl mx-auto flex flex-wrap justify-center gap-4 px-6">
+        {technologies.map((tech, index) => {
+          // Resaltado amarillo específico para Power BI tal como en la captura
+          const isPowerBI = tech.name === 'Power BI';
+          
+          return (
+            <div
+              key={index}
+              className={`flex items-center gap-3 bg-[#161b22]/40 border rounded-xl px-5 py-3 select-none backdrop-blur-sm transition-all duration-300 hover:scale-105
+                ${isPowerBI 
+                  ? 'border-yellow-500/70 shadow-[0_0_15px_rgba(234,179,8,0.1)]' 
+                  : 'border-gray-800 hover:border-gray-700'
+                }`}
+            >
+              <img
+                src={tech.icon}
+                alt={`${tech.name} logo`}
+                className="w-6 h-6 object-contain"
+                loading="lazy"
+              />
+              <span className="text-sm font-medium text-gray-300">{tech.name}</span>
+            </div>
+          );
+        })}
       </div>
     </section>
   );
